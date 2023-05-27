@@ -15,12 +15,10 @@ import asyncio
 
 recognizer = sr.Recognizer()
 
-is_running = True
 
-
-async def audio_entry(entry=sr.Microphone(), languages='fr-FR', timeout=0.08, phrase_time_limit=3.5):
+async def audio_entry( languages='fr-FR', timeout=0.08, phrase_time_limit=3.5):
     global mic, is_running
-    with entry as mic:
+    with sr.Microphone() as mic:
         while is_running:
             try:
                 audio = recognizer.listen(mic, 
