@@ -15,8 +15,6 @@ import asyncio
 
 recognizer = sr.Recognizer()
 
-# 2+2*2 = 8
-
 async def audio_entry( languages='fr-FR', timeout=0.08, phrase_time_limit=3.5):
     global mic, is_running
     with sr.Microphone() as mic:
